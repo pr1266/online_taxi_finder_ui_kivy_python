@@ -1,0 +1,49 @@
+<PassengerFirstPage>:
+    id: main
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba:(1 , 1 , 1 , 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y:None
+        height: 40  
+        canvas.before:
+            Color:
+                rgba: (.06 , .25 , .25 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            id:header
+            text: 'Passenger'
+            size_hint_y:None
+            height:40
+            bold: True
+            color:(1 , 1 , 1 , 1)
+        Button:
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+            text: "Back"
+            on_release: root.go_back()
+            size_hint_y:None
+            height:40
+
+    BoxLayout:
+        id: first_page
+        orientation: 'horizontal'
+        Button:
+            background_normal: ''
+            background_color: (.06 , .32 , .32 , 1)
+            text: "Login"
+            on_release: root.go_to_login()
+        Button:
+            background_normal: ''
+            background_color: (.06 , .35 , .35 , 1)
+            text: "Register"
+            on_release: root.go_to_register()
+

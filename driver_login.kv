@@ -1,0 +1,76 @@
+<DriverLoginWindow>:
+    id: si_win
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before: 
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before: 
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Driver Login"
+            bold: True
+            size_hint_x: .5
+        Button:
+            text: "Back"
+            bold: True
+            size_hint_x: .5
+            on_release: root.go_back()
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: si_win.space_x, 10
+        #spacing: 20
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 10
+            size_hint_y: None
+            height: 100
+            Label:
+                id: info
+                text: ''
+                markup: True
+                size_hint_y: None
+                height: 20
+            Label:
+                text: 'Phone number'
+                size_hint_y:None
+                height:30
+                color:(.06, .45 , .45 , 1)
+            TextInput:
+                id: username_field
+                hint_text: "phone number"
+                multiline: False
+                focus: True
+                on_text_validate: pwd_field.focus = True
+            
+        Label:
+            id: sp
+            size_hint_y: None
+            height: 40
+            color:(.06, .45 , .45 , 1)
+        Button:
+            text: "Login"
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            size_hint_y: None
+            height: 40
+            on_release: root.login()
+        
+        Label:
+            id: sp2

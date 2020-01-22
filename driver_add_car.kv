@@ -1,0 +1,86 @@
+<DriverCarWindow>:
+    id: main
+    orientation: 'vertical'
+    space_x:self.size[0]/3
+    canvas.before:
+        Color:
+            rgba:(1 , 1 , 1 , 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y:None
+        height: 60  
+        canvas.before:
+            Color:
+                rgba: (.06 , .25 , .25 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            id:header
+            text: 'Add Car'
+            size_hint_y:None
+            height:40
+            bold: True
+            color:(1 , 1 , 1 , 1)
+        Button:
+            text:'Back'
+            on_release:root.go_back()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+    Label:
+        text:''
+        id:info
+        colot:(.06 , .25 , .25 , 1)
+        size_hint_y:None
+        height:100
+
+    BoxLayout:
+        padding: main.space_x, 10
+        size_hint_y:None
+        height: 200
+        canvas.before:
+            Color:
+                rgba: (1 , 1 , 1 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        id: car_pannel
+        orientation: 'vertical'
+        Label:
+            text:'License'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            size_hint_y:None
+            height:30
+            id: license
+            multiline: False
+        Label:
+            text:'Model'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            size_hint_y:None
+            height:30
+            id: model
+            multiline: False
+        
+    Label:
+        text:''
+        size_hint_y:None
+        height:50
+    BoxLayout:
+        size_hint_y:None
+        height:70
+        padding: main.space_x, 10
+        Button:
+            text:'Add'
+            on_release:root.add_car()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+    Label:
+        text:''
+        size_hint_y:None
+        height:120

@@ -1,0 +1,86 @@
+<PassengerEditWindow>:
+    id: main
+    orientation: 'vertical'
+    space_x:self.size[0]/3
+    canvas.before:
+        Color:
+            rgba:(1 , 1 , 1 , 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y:None
+        height: 60  
+        canvas.before:
+            Color:
+                rgba: (.06 , .25 , .25 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            id:header
+            text: 'Passenger Edit'
+            size_hint_y:None
+            height:40
+            bold: True
+            color:(1 , 1 , 1 , 1)
+        Button:
+            text:'Back'
+            on_release:root.go_back()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+    Label:
+        text:''
+        size_hint_y:None
+        height:100
+
+    BoxLayout:
+        padding: main.space_x, 10
+        size_hint_y:None
+        height: 200
+        canvas.before:
+            Color:
+                rgba: (1 , 1 , 1 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        id: first_page
+        orientation: 'vertical'
+        Label:
+            text:'first name'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            id: first_name
+            multiline: False
+        Label:
+            text:'last name'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            id: last_name
+            multiline: False
+        
+        Label:
+            text:'city'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            id: city
+            multiline: False 
+    Label:
+        text:''
+        size_hint_y:None
+        height:50
+    BoxLayout:
+        size_hint_y:None
+        height:70
+        padding: main.space_x, 10
+        Button:
+            text:'Edit'
+            on_release:root.edit()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+    Label:
+        text:''
+        size_hint_y:None
+        height:120

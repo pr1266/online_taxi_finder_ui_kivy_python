@@ -1,0 +1,72 @@
+<DriverVoteWindow>:
+    id: main
+    orientation: 'vertical'
+    space_x:self.size[0]/3
+    canvas.before:
+        Color:
+            rgba:(1 , 1 , 1 , 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y:None
+        height: 60  
+        canvas.before:
+            Color:
+                rgba: (.06 , .25 , .25 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            id:header
+            text: 'Please Leave a Comment for us'
+            on_release:root.refresh()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+    
+    BoxLayout:
+        padding: main.space_x, 10
+        size_hint_y:None
+        orientation:'vertical'
+        height: 200  
+        canvas.before:
+            Color:
+                rgba: (1 , 1, 1, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            color:(.06 , .25 , .25 , 1)
+            text:'write a comment !'
+        TextInput:
+            id: vote
+            multiline: False
+            fucos: True
+            size_hint_y:None
+            height:30
+
+        Label:
+            color:(.06 , .25 , .25 , 1)
+            text:'From one to Five Please !'
+        TextInput:
+            id: integer
+            multiline: False
+            fucos: True
+            size_hint_y:None
+            height:30
+    GridLayout:
+        id: gd
+        size_hint_y:None
+        height:280
+    
+    Button:
+        text: 'Submit Vote'
+        on_release:root.vote()
+        background_normal: ''
+        background_color: (.06 , .25 , .25 , 1)
+        size_hint_y:None
+        height:60
+
+        

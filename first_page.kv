@@ -1,0 +1,42 @@
+<MainWindow>:
+    id: main
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba:(1 , 1 , 1 , 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y:None
+        height: 60  
+        canvas.before:
+            Color:
+                rgba: (.06 , .3 , .3 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            id:header
+            text: 'Cab Management System'
+            size_hint_y:None
+            height:40
+            bold: True
+            color:1, 1, 1, 1
+
+    BoxLayout:
+        id: first_page
+        orientation: 'horizontal'
+        Button:
+            background_normal: ''
+            background_color: (.06 , .32 , .32 , 1)
+            text: "Passenger"
+            on_release: root.go_to_passenger()
+        Button:
+            background_normal: ''
+            background_color: (.06 , .35 , .35 , 1)
+            text: "Driver"
+            on_release: root.go_to_driver()
+

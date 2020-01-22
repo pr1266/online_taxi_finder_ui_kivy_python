@@ -1,0 +1,90 @@
+<AddTravelWindow>:
+    id: main
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before: 
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before: 
+            Color:
+                rgba: (.06, .32, .32, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            text: "Add Travel"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release: root.refresh()
+        Button:
+            text: "Back"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release: root.go_back()
+
+    BoxLayout:
+        padding: main.space_x, 10
+        size_hint_y:None
+        height: 250
+        canvas.before:
+            Color:
+                rgba: (1 , 1 , 1 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        id: first_page
+        orientation: 'vertical'
+        Label:
+            text:'pick up point'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            id: pick_up
+            multiline: False
+        Label:
+            text:'drop point(s)'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            id: drop
+            multiline: False
+        Label:
+            text:'total stop'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            id: stop
+            multiline: False
+        Label:
+            text:'payment method'
+            color: (.06 , .25 , .25 , 1)
+        TextInput:
+            id: method
+            multiline: False
+    Label:
+        size_hint_y:None
+        text: '' 
+        color: (.06 , .25 , .25 , 1)
+        id:info
+        height: 30
+    GridLayout:
+        id:gd
+        cols:1
+    BoxLayout:
+        size_hint_y:None
+        height:50
+        Button:
+            text:'add travel'
+            on_release:root.add_travel()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+    

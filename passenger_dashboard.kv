@@ -1,0 +1,156 @@
+<PassengerPanelWindow>:
+    id: si_win
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before: 
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 150
+        orientation:'vertical'
+        canvas.before: 
+            Color:
+                rgba: (.06, .32, .32, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            text: "Passenger Dashboard"
+            bold: True
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release: root.refresh()
+        BoxLayout:
+            size_hint_y:None
+            orientation:'vertical'
+            height:100
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+                canvas.before: 
+                    Color:
+                        rgba: (.06, .45, .45, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Label:
+                    text: "votes"
+                    bold: True
+                    
+                    size_hint_x: .3
+                Label:
+                    text: "no. of travels"
+                    bold: True
+                     
+                    size_hint_x: .3
+                Label:
+                    text: "balance"
+                    
+                    bold: True
+                    size_hint_x: .3
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+                canvas.before: 
+                    Color:
+                        rgba: (.06, .45, .45, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Label:
+                    text: ""
+                    id:vote
+                    bold: True
+                    size_hint_x: .33
+                Label:
+                    text: ""
+                    id: travel_count
+                    bold: True
+                    size_hint_x: .33
+                Label:
+                    text: ""
+                    id:balance
+                    bold: True
+                    size_hint_x: .33
+    BoxLayout:
+        size_hint_y:None
+        height: 30
+        canvas.before: 
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Driver"
+            bold: True
+            size_hint_x: .2
+        Label:
+            text: "Pickup Point"
+            bold: True
+            size_hint_x: .2
+        Label:
+            text: "Total Distance"
+            bold: True
+            size_hint_x: .2
+        Label:
+            text: "Total Stop"
+            bold: True
+            size_hint_x: .1
+        Label:
+            text: "Date"
+            bold: True
+            size_hint_x: .2
+        Label:
+            text: "Cost"
+            bold: True
+            size_hint_x: .1
+
+    GridLayout:
+
+        id:gd
+        cols:1
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before: 
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            text: "charge"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release:root.charge()
+        Button:
+            text: "new Travel"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release:root.new_travel()
+        Button:
+            text: "Edit Info"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release:root.edit_info()
+        Button:
+            text: "Common Places"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release:root.add_common()

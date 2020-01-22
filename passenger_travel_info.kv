@@ -1,0 +1,79 @@
+<TravelInfoWindow>:
+    id: main
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before: 
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before: 
+            Color:
+                rgba: (.06, .32, .32, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            text: "Travel"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release: root.refresh()
+        Button:
+            text: "Cancel"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release: root.cancel()
+    BoxLayout:
+        size_hint_y:None
+        height:30
+        canvas.before: 
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            text: "Driver"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+        Button:
+            text: "Total Distance"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+        Button:
+            text: "Total Stop"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+        Button:
+            text: "Total Cost"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+        Button:
+            text: "Payment Status"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+    GridLayout:
+        id: gd
+        cols: 1
+
+        

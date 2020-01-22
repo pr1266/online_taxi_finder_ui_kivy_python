@@ -1,0 +1,83 @@
+<PassengerChargeWindow>:
+    id: si_win
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before: 
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before: 
+            Color:
+                rgba: (.06, .32, .32, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            text: "Passenger Balance"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release: root.refresh()
+        Button:
+            text: "Back"
+            bold: True
+            size_hint_x: .5
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            on_release: root.go_back()
+
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before: 
+            Color:
+                rgba: (.06, .32, .32, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text:'current balance :'
+            bold: True
+            size_hint_x:.5
+        Label:
+            text:''
+            id:curr_balance
+            bold: True
+            size_hint_x:.5
+    
+    BoxLayout:
+        padding: si_win.space_x, 10
+        orientation:'vertical'
+        size_hint_y:None
+        height:100
+        Label:
+            text:'enter the charge'
+            color:(.06, .32, .32, 1)
+            id:info
+        TextInput:
+            id:charge
+            size_hint_y:None
+            height:40
+            multiline:False
+            fucos:True
+    
+    BoxLayout:
+        padding: si_win.space_x, 10
+        Button:
+            text: "Charge"
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+            size_hint_y: None
+            height: 40
+            on_release: root.charge()
+
+        

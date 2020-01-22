@@ -1,0 +1,71 @@
+<DriverTravelInfoWindow>:
+    id: main
+    orientation: 'vertical'
+    space_x:self.size[0]/3
+    canvas.before:
+        Color:
+            rgba:(1 , 1 , 1 , 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y:None
+        height: 60  
+        canvas.before:
+            Color:
+                rgba: (.06 , .25 , .25 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            id:header
+            text: 'Travel Info'
+            on_release:root.refresh()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+        Button:
+            text:'Cancel'
+            on_release:root.cancel()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+        Button:
+            text:'End travel'
+            on_release:root.end()
+            background_normal: ''
+            background_color: (.06 , .25 , .25 , 1)
+    BoxLayout:
+        size_hint_y:None
+        height:30
+        Button:
+            text: "Payment Method"
+            bold: True
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+        Button:
+            text: "Pickup point"
+            bold: True
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+        Button:
+            text: "Total Distance"
+            bold: True
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+        Button:
+            text: "Total Cost"
+            bold: True
+            background_color: (.06, .45 , .45 , 1)
+            background_normal: ''
+    Label:
+        text:''
+        size_hint_y:None
+        height:100
+    GridLayout:
+        id:gd1
+        cols:1
+
+    GridLayout:
+        id:gd2
+        cols:1
+          
